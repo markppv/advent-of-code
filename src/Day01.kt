@@ -2,8 +2,8 @@ import kotlin.math.abs
 
 fun main() = justRun(
     object : Solution(day = 1, expected1 = 3, expected2 = 6) {
-        override fun part1(input: List<String>): Int {
-            var count = 0
+        override fun part1(input: List<String>): Long {
+            var count = 0L
             var curr = 50
 
             for (line in input) {
@@ -16,8 +16,8 @@ fun main() = justRun(
             return count
         }
 
-        override fun part2(input: List<String>): Int {
-            var count = 0
+        override fun part2(input: List<String>): Long {
+            var count = 0L
             var curr = 50
 
             for (line in input) {
