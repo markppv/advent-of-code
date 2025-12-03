@@ -12,6 +12,7 @@ fun String.md5() =
         .toString(16).padStart(32, '0')
 
 fun Any?.println() = println(this)
+fun <T> T.alsoPrintln(): T = also { println(it) }
 
 abstract class Solution(
     val day: Int,
