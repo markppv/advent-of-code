@@ -17,6 +17,8 @@ fun <T> T.alsoPrintln(): T = also { println(it) }
 abstract class Solution(
     val day: Int,
     val delimiter: Char = '\n',
+    val name1: String = "test",
+    val name2: String = "test",
     val expected1: Long,
     val expected2: Long,
 ) {
@@ -27,9 +29,11 @@ abstract class Solution(
 fun justRun(solution: Solution) {
     val paddedDay = solution.day.toString().padStart(2, '0')
     
-    val testInput = readInput("Day${paddedDay}_test", solution.delimiter)
-    check(solution.part1(testInput), solution.expected1)
-    check(solution.part2(testInput), solution.expected2)
+    val testInput1 = readInput("Day${paddedDay}_${solution.name1}", solution.delimiter)
+    val testInput2 = readInput("Day${paddedDay}_${solution.name2}", solution.delimiter)
+
+    check(solution.part1(testInput1), solution.expected1)
+    check(solution.part2(testInput2), solution.expected2)
 
     val input = readInput("Day${paddedDay}", solution.delimiter)
     solution.part1(input).println()
